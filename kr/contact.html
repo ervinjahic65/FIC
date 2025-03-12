@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문의하기 - Innovation I</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="files/logo.png" sizes="16x16">
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-green-600 text-white py-4">
+      <div class="container mx-auto flex items-center justify-between px-4">
+        <!-- Logo on Left -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-800">
+            <img src="files/logo.png" alt="Logo" class="h-14">
+          </a>
+        </div>
+        <!-- Centered Text -->
+        <div class="text-center flex-grow">
+          <h1 class="text-lg md:text-4xl font-bold">문의하기</h1>
+          <p class="mt-1 md:mt-4 text-sm md:text-lg">
+            여러분의 소식을 듣고 싶습니다.
+          </p>
+        </div>
+        <!-- Placeholder to balance the logo on the left -->
+        <div class="w-12 md:w-32"></div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+      <!-- Introductory Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-semibold mb-4">문의하기</h2>
+        <p class="mb-4">
+          Innovation I는 탁월한 지원과 서비스를 제공하기 위해 최선을 다하고 있습니다.
+          질문이나 의견, 또는 플랫폼 사용 관련 도움이 필요하시면 언제든지 연락 주십시오.
+          아래 문의 양식을 이용해 문의 내용을 보내주시기 바랍니다.
+        </p>
+        <p class="mb-4">
+          또는 이메일이나 전화로도 연락하실 수 있습니다. 여러분의 소중한 의견을 기다리며, 빠른 시일 내에 소통할 수 있기를 바랍니다.
+        </p>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section>
+        <div id="form" class="max-w-xl mx-auto bg-white p-8 shadow rounded">
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">이름</label>
+              <input type="text" id="name" name="name" placeholder="이름을 입력하세요" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">이메일 주소</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700">제목</label>
+              <input type="text" id="subject" name="subject" placeholder="제목을 입력하세요" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">메시지</label>
+              <textarea id="message" name="message" rows="4" placeholder="메시지를 입력하세요" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full py-2 px-4 bg-green-600 text-white rounded hover:bg-green-700 transition duration-150">
+                메시지 전송
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-gray-200 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+          <div class="mb-6 md:mb-0">
+            <img src="files/logo.png" alt="Logo" class="w-32 mb-4" />
+          </div>
+          <div class="flex flex-wrap gap-6">
+            <a href="about.html" class="hover:text-white">회사 소개</a>
+            <a href="contact.html" class="hover:text-white">문의하기</a>
+            <a href="privacy.html" class="hover:text-white">개인정보 처리방침</a>
+            <a href="terms.html" class="hover:text-white">이용 약관</a>
+          </div>
+        </div>
+        <div class="mt-8 text-sm">
+          <p>저작권 © 2025 - Innovation I. 모든 권리 보유.</p>
+          <br>
+          <p>주소: 서울특별시 중구 서소문동 21-1</p>
+          <p>전화: +34 986 227 374</p>
+          <p>법인 등록 번호: 4010501096087</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Submission Script -->
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Show loading gif centered in the form container
+        document.getElementById("form").innerHTML = '<img src="files/loading.gif" style="display: block; margin: 0 auto;" width="80">';
+      
+        setTimeout(() => {
+          document.getElementById("form").innerHTML = '<p style="font-size: 18px; color: black; font-weight: 700; text-align: center;">등록해 주셔서 감사합니다. 담당자가 곧 연락드리겠습니다.</p>';
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

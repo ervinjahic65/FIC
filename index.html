@@ -585,5 +585,56 @@
                 </div>
             </div>
         </footer>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            const sliderMask = document.getElementById("w-slider-mask-0");
+            const slides = sliderMask.querySelectorAll(".w-slide");
+            const leftArrow = document.querySelector(".leaders_left-arrow");
+            const rightArrow = document.querySelector(".leaders_right-arrow");
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Ensure the slider mask is a flex container so that slides sit in a row.
+            sliderMask.style.display = "flex";
+            sliderMask.style.overflow = "hidden";
+
+            // Function to set each slide's width to the parent's width
+            function updateSlideWidths() {
+              const containerWidth = sliderMask.parentElement.clientWidth;
+              slides.forEach(slide => {
+                slide.style.minWidth = containerWidth + "px";
+              });
+              // Set the slider mask's total width to contain all slides
+              sliderMask.style.width = containerWidth * totalSlides + "px";
+            }
+
+            // Update slide widths on load
+            updateSlideWidths();
+
+            // Function to update the slider's position
+            function updateSlider() {
+              const containerWidth = sliderMask.parentElement.clientWidth;
+              sliderMask.style.transition = "transform 0.5s ease";
+              sliderMask.style.transform = `translateX(-${currentIndex * containerWidth}px)`;
+            }
+
+            // Arrow click events to change slides
+            leftArrow.addEventListener("click", function() {
+              currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+              updateSlider();
+            });
+
+            rightArrow.addEventListener("click", function() {
+              currentIndex = (currentIndex + 1) % totalSlides;
+              updateSlider();
+            });
+
+            // Recalculate dimensions on window resize
+            window.addEventListener("resize", function() {
+              updateSlideWidths();
+              updateSlider();
+            });
+          });
+        </script>
     </body>
 </html>

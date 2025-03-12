@@ -4042,9 +4042,10 @@ figcaption {
 }
 
 .navbar__shadow {
-  display: none;
+  display: block;
   position: absolute;
   inset: 0%;
+  background-color: #18aa9c;
 }
 
 .navbar__shadow.navbar__shadow--visible {

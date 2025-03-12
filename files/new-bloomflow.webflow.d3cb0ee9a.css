@@ -5063,6 +5063,7 @@ figcaption {
 }
 
 .banner__txt.feature-banner {
+  padding-top: 15px;
   margin-right: -10px;
 }
 
@@ -13523,6 +13524,7 @@ figcaption {
   }
 
   .banner__txt {
+    padding-top: 20px;
     font-size: 14px;
   }
 

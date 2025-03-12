@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Kami - Innovation I</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="files/logo.png" sizes="16x16">
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-green-600 text-white py-4">
+      <div class="container mx-auto flex items-center justify-between px-4">
+        <!-- Logo di Kiri -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-800">
+            <img src="files/logo.png" alt="Logo" class="h-14">
+          </a>
+        </div>
+        <!-- Teks di Tengah -->
+        <div class="text-center flex-grow">
+          <h1 class="text-lg md:text-4xl font-bold">Hubungi Kami</h1>
+          <p class="mt-1 md:mt-4 text-sm md:text-lg">
+            Kami ingin mendengar kabar dari Anda.
+          </p>
+        </div>
+        <!-- Placeholder untuk menyeimbangkan logo di kiri -->
+        <div class="w-12 md:w-32"></div>
+      </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+      <!-- Bagian Pengantar -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Hubungi Kami</h2>
+        <p class="mb-4">
+          Di Innovation I, kami berdedikasi untuk memberikan dukungan dan pelayanan yang luar biasa.
+          Apakah Anda memiliki pertanyaan, masukan, atau membutuhkan bantuan terkait platform kami, tim kami siap membantu.
+          Silakan gunakan formulir kontak di bawah ini untuk mengirimkan pertanyaan Anda.
+        </p>
+        <p class="mb-4">
+          Sebagai alternatif, Anda juga dapat menghubungi kami melalui email atau telepon. Kami menghargai masukan Anda dan menantikan kesempatan untuk berhubungan dengan Anda.
+        </p>
+      </section>
+
+      <!-- Bagian Formulir Kontak -->
+      <section>
+        <div id="form" class="max-w-xl mx-auto bg-white p-8 shadow rounded">
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+              <input type="text" id="name" name="name" placeholder="Nama Anda" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Alamat Email</label>
+              <input type="email" id="email" name="email" placeholder="anda@contoh.com" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700">Subjek</label>
+              <input type="text" id="subject" name="subject" placeholder="Subjek" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Pesan</label>
+              <textarea id="message" name="message" rows="4" placeholder="Pesan Anda..." class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full py-2 px-4 bg-green-600 text-white rounded hover:bg-green-700 transition duration-150">
+                Kirim Pesan
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-gray-200 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+          <div class="mb-6 md:mb-0">
+            <img src="files/logo.png" alt="Logo" class="w-32 mb-4" />
+          </div>
+          <div class="flex flex-wrap gap-6">
+            <a href="about.html" class="hover:text-white">Tentang Kami</a>
+            <a href="contact.html" class="hover:text-white">Hubungi Kami</a>
+            <a href="privacy.html" class="hover:text-white">Kebijakan Privasi</a>
+            <a href="terms.html" class="hover:text-white">Syarat dan Ketentuan</a>
+          </div>
+        </div>
+        <div class="mt-8 text-sm">
+          <p>Hak Cipta © 2025 - Innovation I. Semua hak dilindungi undang-undang.</p>
+          <br>
+          <p>Nomor Perusahaan: 00943935</p>
+          <p>Alamat: Lime St, London EC3M 7HR, UK</p>
+          <p>Nomor Telepon: 01632 960189</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script Pengiriman -->
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Tampilkan gif loading di tengah container formulir
+        document.getElementById("form").innerHTML = '<img src="files/loading.gif" style="display: block; margin: 0 auto;" width="80">';
+      
+        setTimeout(() => {
+          document.getElementById("form").innerHTML = '<p style="font-size: 18px; color: black; font-weight: 700; text-align: center;">Terima kasih telah mendaftar. Seorang perwakilan akan segera menghubungi Anda.</p>';
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

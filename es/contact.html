@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contáctanos - Innovation I</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="files/logo.png" sizes="16x16">
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+    <!-- Encabezado -->
+    <header class="bg-green-600 text-white py-4">
+      <div class="container mx-auto flex items-center justify-between px-4">
+        <!-- Logo a la izquierda -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-800">
+            <img src="files/logo.png" alt="Logo" class="h-14">
+          </a>
+        </div>
+        <!-- Texto centrado -->
+        <div class="text-center flex-grow">
+          <h1 class="text-lg md:text-4xl font-bold">Contáctanos</h1>
+          <p class="mt-1 md:mt-4 text-sm md:text-lg">
+            Nos encantaría saber de ti.
+          </p>
+        </div>
+        <!-- Espacio reservado para balancear el logo a la izquierda -->
+        <div class="w-12 md:w-32"></div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+      <!-- Sección de Introducción -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-semibold mb-4">Ponte en Contacto</h2>
+        <p class="mb-4">
+          En Innovation I estamos dedicados a ofrecer un soporte y servicio excepcionales.
+          Ya sea que tengas una pregunta, comentario o necesites asistencia con nuestra plataforma, nuestro equipo está listo para ayudarte.
+          Utiliza el siguiente formulario para enviarnos tu consulta.
+        </p>
+        <p class="mb-4">
+          Alternativamente, puedes comunicarte con nosotros por correo electrónico o teléfono. Valoramos tus comentarios y esperamos conectar contigo.
+        </p>
+      </section>
+
+      <!-- Sección del Formulario de Contacto -->
+      <section>
+        <div id="form" class="max-w-xl mx-auto bg-white p-8 shadow rounded">
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+              <input type="text" id="name" name="name" placeholder="Tu Nombre" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700">Asunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Asunto" class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tu mensaje..." class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full py-2 px-4 bg-green-600 text-white rounded hover:bg-green-700 transition duration-150">
+                Enviar Mensaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-green-600 text-gray-200 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+          <div class="mb-6 md:mb-0">
+            <img src="files/logo.png" alt="Logo" class="w-32 mb-4" />
+          </div>
+          <div class="flex flex-wrap gap-6">
+            <a href="about.html" class="hover:text-white">Sobre Nosotros</a>
+            <a href="contact.html" class="hover:text-white">Contáctanos</a>
+            <a href="privacy.html" class="hover:text-white">Política de Privacidad</a>
+            <a href="terms.html" class="hover:text-white">Términos y Condiciones</a>
+          </div>
+        </div>
+        <div class="mt-8 text-sm">
+          <p>Copyright © 2025 - Innovation I. Todos los derechos reservados.</p>
+          <br>
+          <p>
+            CNPJ: 78.989.613/0001-90 <br>
+            Inscripción Estatal: 8324829-77 <br>
+            Dirección: 974 Rua Itaguaí, Mangabeira, Feira de Santana, 44056-516 <br>
+            Número de teléfono: (75) 2871-8215 <br>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script de Envío -->
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Mostrar gif de carga centrado en el contenedor del formulario
+        document.getElementById("form").innerHTML = '<img src="files/loading.gif" style="display: block; margin: 0 auto;" width="80">';
+      
+        setTimeout(() => {
+          document.getElementById("form").innerHTML = '<p style="font-size: 18px; color: black; font-weight: 700; text-align: center;">Gracias por contactarnos. Un representante se pondrá en contacto contigo en breve.</p>';
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
